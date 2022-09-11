@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: f0b26106-7f00-46c4-a3b5-e420540850be
+      url: 'https://poetic-klepon-062db7.netlify.app'
