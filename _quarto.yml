@@ -9,21 +9,11 @@ website:
     left:
       - text: "主页"
         file: index.qmd
-      - sidebar:生活
-      - sidebar:干货
+      - text: "生活"
+        file: 生活.qmd
+      - text: "干货"
+        file: 干货.qmd
       - about.qmd
-  sidebar:
-    - id: 生活
-      title: "生活"
-      style: "docked"
-      background: light
-      contents:
-        - 骑行.qmd
-    - text: "---"
-    - id: 干货
-      title: "干货"
-      style: "docked"
-      background: light
   reader-mode: true
   page-footer: "Copyright 2022, Zihao Shu"
 format:
@@ -33,6 +23,8 @@ format:
     toc: true
 about:
   template: jolla
+
+
 
 
 
