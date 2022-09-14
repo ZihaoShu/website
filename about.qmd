@@ -2,10 +2,13 @@
 title: "个人简介"
 image: profile.jpg
 about:
-  template: jolla
+  template: trestles
+  image-width: 10cm
+  image-shape: round
   links:
     - icon: envelope
-      text: 17320568176@163.com
+      text: Email
+      href: mailto:17320568176@163.com
     - icon: github
       text: Github
       href: https://github.com/ZihaoShu

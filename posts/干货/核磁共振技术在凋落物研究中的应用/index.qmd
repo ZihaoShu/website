@@ -3,7 +3,7 @@ title: "核磁共振技术在凋落物研究中的应用"
 title-block-banner: true
 author: "Zihao Shu"
 date: 2022-9-12
-categories: [仪器科学,互花米草]
+categories: [理论基础,互花米草]
 ---
 # 1 核磁共振技术的理论基础
 <p align="left">核磁共振技术（nuclear magnetic resonance，NMR）是研究有机化合物结构的有效手段，与其他化学方法相比，NMR可以在不破坏样品结构的情况下进行测定。</p>

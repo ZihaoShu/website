@@ -2,18 +2,15 @@ project:
   type: website
 
 website:
-  title: "ZihaoShu"
+  title: "舒子豪"
   navbar:
     background: primary
     search: true
-    left:
+    right:
       - text: "主页"
         file: index.qmd
-      - text: "生活"
-        file: 生活.qmd
-      - text: "干货"
-        file: 干货.qmd
       - about.qmd
+
   reader-mode: true
   page-footer: "Copyright 2022, Zihao Shu"
 format:
