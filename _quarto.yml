@@ -3,6 +3,7 @@ project:
 
 website:
   title: "舒子豪"
+  site-url: https://shuzihao.netlify.app
   navbar:
     background: primary
     search: true
@@ -10,8 +11,10 @@ website:
       - text: "主页"
         file: index.qmd
       - about.qmd
+      - icon: rss
+        href: index.xml
+    pinned: true
 
-  reader-mode: true
   page-footer: "Copyright 2022, Zihao Shu"
 format:
   html:
@@ -19,7 +22,7 @@ format:
     css: styles.css
     toc: true
 about:
-  template: jolla
+  template: marquee
 
 
 
