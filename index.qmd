@@ -1,7 +1,4 @@
 ---
-title: "人生代代无穷已，江月年年望相似"
-title-block-banner: "#3E3F3A"
-title-block-banner-color: "#C5C6C4"
 listing:
   contents: posts/博客
   sort: "date desc"
@@ -11,7 +8,7 @@ listing:
   filter-ui: true
   feed: true
 page-layout: full
-title-block-banner: true
+title-block-banner: false
 ---
 
 
