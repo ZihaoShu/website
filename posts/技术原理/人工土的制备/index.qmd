@@ -5,4 +5,41 @@ title-block-banner: false
 author: "舒子豪"
 date: today
 categories: [人工土,针铁矿,高岭土,石英砂]
+image: "硝酸铁.jpg"
 ---
+# 材料准备
+
+- 石英砂
+
+- 九水硝酸铁（Fe(NO<sub>3</sub>)<sub>3</sub>·9H<sub>2</sub>O）<br>又名硝酸高铁浅紫色或灰白色单斜晶体，易潮解。<br>1 M的九水硝酸铁溶液配制：称取40.4 g九水硝酸铁溶解于100 ml蒸馏水中摇匀，备用。
+
+- 氢氧化钾（KOH）
+
+- 氯化钙（CaCl<sub>2</sub>）
+
+- 高岭土（Al<sub>2</sub>O<sub>3</sub>·2Si<sub>2</sub>O<sub>2</sub>·2H<sub>2</sub>O<sub>2</sub>）
+
+# 制备过程
+
+- 石英砂的制备<br>将不同粒径的石英砂分别过2 mm和0.05 mm筛，取留在0.05 mm筛上的石英砂。水洗后置于马弗炉中在550℃下灼烧两次，每次4 h。冷却至室温后用2 M HCl清洗石英砂脱除碳酸盐，用蒸馏水洗涤后在105℃下烘干备用[^1]。
+
+- 针铁矿的制备<br>用180 ml 5 M KOH 与100 ml 1 M Fe(NO<sub>3</sub>)<sub>3</sub>·9H<sub>2</sub>O中和，然后用2 L 蒸馏水稀释并在70℃下密闭保存60 h，最后洗涤产物去除OH<sup>-</sup>、NO<sup>3-</sup>，冷冻干燥后备用[^2]。
+
+- 高岭土的制备<br>水洗高岭土粉末，去除杂质，提高纯度，得到<2 μm的细组分，冷冻干燥后备用。
+
+- 粘土的制备<br>将高岭土与针铁矿以10:1 (w:w)混合，加入0.01 M CaCl<sub>2</sub>(10:1，v:w)制备悬浮液。将悬浮液搅拌24 h，在5500 g下离心10 min，倒去上清液，将土壤在脱盐水中重悬浮后再次离心10 min，重复重悬浮过程，直到上清液EC<100 μS/cm，得到的土壤冷冻干燥后过210 μm筛备用[^3][^4]。
+
+- 人工土壤的制备<br>将石英砂与黏土按一定比例（45%）混合，测定持水能力，并在高压灭菌锅中120℃下湿蒸3次，每次2 h，去除土壤微生物[^5]。
+
+
+
+# 参考资料
+[^1]: Rakhsh F, Golchin A, Al Agha A B, et al. [Effects of exchangeable cations, mineralogy and clay content on the mineralization of plant residue carbon](https://doi.org/10.1016/j.geoderma.2017.07.010)[J]. Geoderma, 2017, 307: 150-158.
+[^2]: Schwertmann U, Cornell R M. [Iron oxides in the laboratory: preparation and characterization](https://doi.org/10.1180/claymin.1992.027.3.14)[M]. John Wiley & Sons, 2008.
+[^3]: Rakhsh F, Golchin A, Al Agha A B, et al. [Mineralization of organic carbon and formation of microbial biomass in soil: Effects of clay content and composition and the mechanisms involved](https://doi.org/10.1016/j.soilbio.2020.108036)[J]. Soil Biology and Biochemistry, 2020, 151: 108036.
+[^4]: Saidy A R, Smernik R J, Baldock J A, et al. [Effects of clay mineralogy and hydrous iron oxides on labile organic carbon stabilisation](https://doi.org/10.1016/j.geoderma.2011.12.030)[J]. Geoderma, 2012, 173: 104-110.
+[^5]: Cai Y, Ma T, Wang Y, et al. [Assessing the accumulation efficiency of various microbial carbon components in soils of different minerals](https://doi.org/10.1016/j.geoderma.2021.115562)[J]. Geoderma, 2022, 407: 115562.
+
+
+
+
