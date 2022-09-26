@@ -7,6 +7,31 @@ date: today
 categories: [人工土,针铁矿,高岭土,石英砂]
 image: "硝酸铁.jpg"
 ---
+# 理论基础
+
+铁在地壳内的数量仅次于**氧**、**硅**和**铝**，位居第四，在地壳中的含量丰富且氧化还原性质活跃。土壤中的铁几乎以**氧化铁**的形态存在，成土过程中母质风化的产物经过再积淀是土壤中氧化铁的主要成因，矿物中的铁在风化作用下游离在硅酸盐外，形成了氧化铁[^6]。
+
+土壤中常见的氧化铁为**赤铁矿（Hematite，α-Fe<sub>2</sub>O<sub>3</sub>）**、**磁赤铁矿（Maghemite，γ-Fe<sub>2</sub>O<sub>3</sub>）**、**针铁矿（Goethite，α-FeO(OH)）**、**纤铁矿（Lepidocrocite，γ-FeO(OH)）**、**水铁矿**和**氢氧化铁凝胶**。
+
+**土壤中氧化铁的主要存在形态包括：**
+
+- 游离态氧化铁（Fe<sub>d</sub>）<br>是指土壤中排除在层状硅酸盐组成部分之外的铁，主要是土壤黏粒中的铁氧化物和水化合物，也可以定义为可以用连二亚硫酸钠-柠檬酸钠-重碳酸钠（DCB）法提取的氧化铁。<br>土壤中或土壤粘粒中的游离态铁氧化物在全铁（Fe<sub>T</sub>）中所占的百分数即为**铁的游离度（100 × Fe<sub>d</sub>/Fe<sub>T</sub>）**，对反映土壤风华程度具有重要意义。
+
+- 无定形态氧化铁（Fe<sub>o</sub>）<br>是指能用**草酸铵**提取的氧化铁，是游离态氧化铁中的一部分，活性较高，比表面积较大，不发生X射线衍射的水合氧化铁。<br>无定形铁在游离态铁中所占的百分比叫做**氧化铁的活化度（100 × Fe<sub>o</sub>/Fe<sub>d</sub>）**，可判定土壤的发生特征和土类，反映某些成土环境对土壤发生的影响。<br>**（1-100 × Fe<sub>o</sub>/Fe<sub>d</sub>）**表示氧化铁的老化程度。<br>游离氧化铁与无定形氧化铁（Fe<sub>o</sub>）的差值为晶质氧化铁。
+
+- 络合态氧化铁（Fe<sub>p</sub>）<br>是指能够与土壤腐殖质形成络合物，即能被**焦磷酸钠**提取的那部分氧化铁，属于无定形物质，但是由于不能完全被**草酸铵缓冲溶液**提取，因此，并不完全包含于无定形铁中。<br>络合态铁占游离态铁的百分比为铁的络合度（100 × Fe<sub>p</sub>/Fe<sub>d</sub>），土壤络合铁的含量和络合度与有机质含量正相关，是铁离子在土壤中迁移转化的主要原因之一。
+
+针铁矿广泛存在于土壤中（热带和亚热带土壤含量较高），虽然在数量上是土壤的次要成分，但是其本身的性质及对土壤反应所起的作用和对层状矿物有重要的影响。土壤中针铁矿以单独的晶体、凝胶态、斑状、胶膜等形式存在，**人工合成的针铁矿以晶体形式存在，其电荷零点（ZPC）较高**，但同土壤中的针铁矿一样其表面积较大、表面活性官能团较多、电荷的可变性墙，对土壤的物理化学特性，尤其是营养元素的吸附、迁移有及其重要的作用。相对于天然形成的针铁矿，合成针铁矿具有纯度高、方便易得、可重复制备等优点[^9]。
+
+自1976年Atkinson等人用合成的针铁矿进行吸附实验研究之后，相继有很多研究学者对合成针铁矿进行了研究探索。主要合成方法有水热法和水解中和法。水热法在高温高压的反应釜中进行，反应时间短但反应条件不易实现，所以使用最对的是水解中和法[^7]。
+
+**水解中和法制备条件对合成针铁矿的影响：**
+
+1. 在制备针铁矿的实验过程中，酸性条件和常温磁力搅拌都不利于前驱体转化为针铁矿，不利于形成针铁矿结晶，老化时间对针铁矿结晶程度和晶体生长有一定影响。优化的针铁矿制备条件为：碱性条件下70℃老化48 h以上。
+
+2. 矿化剂混合方式不会影响针铁矿物相的形成，但对针铁矿的结晶形貌、粒径大小、团聚程度和比表面积产生一定影响。优化条件下迅速混合矿化剂，可制得结晶程度好，粒度分布均匀，比表面积较大得较为均一的雪花针铁矿；逐滴滴加矿化剂可制得结晶程度好，较均匀分布得条柱状针铁矿[^8]。
+
+
 # 材料准备
 
 - 石英砂
@@ -25,6 +50,8 @@ image: "硝酸铁.jpg"
 
 - 针铁矿的制备<br>用180 ml 5 M KOH 与100 ml 1 M Fe(NO<sub>3</sub>)<sub>3</sub>·9H<sub>2</sub>O中和，然后用2 L 蒸馏水稀释并在70℃下密闭保存60 h，最后洗涤产物去除OH<sup>-</sup>、NO<sup>3-</sup>，冷冻干燥后备用[^2]。
 
+<center>![](针铁矿的制备.png)</center>
+
 - 高岭土的制备<br>水洗高岭土粉末，去除杂质，提高纯度，得到<2 μm的细组分，冷冻干燥后备用。
 
 - 粘土的制备<br>将高岭土与针铁矿以10:1 (w:w)混合，加入0.01 M CaCl<sub>2</sub>(10:1，v:w)制备悬浮液。将悬浮液搅拌24 h，在5500 g下离心10 min，倒去上清液，将土壤在脱盐水中重悬浮后再次离心10 min，重复重悬浮过程，直到上清液EC<100 μS/cm，得到的土壤冷冻干燥后过210 μm筛备用[^3][^4]。
@@ -39,6 +66,10 @@ image: "硝酸铁.jpg"
 [^3]: Rakhsh F, Golchin A, Al Agha A B, et al. [Mineralization of organic carbon and formation of microbial biomass in soil: Effects of clay content and composition and the mechanisms involved](https://doi.org/10.1016/j.soilbio.2020.108036)[J]. Soil Biology and Biochemistry, 2020, 151: 108036.
 [^4]: Saidy A R, Smernik R J, Baldock J A, et al. [Effects of clay mineralogy and hydrous iron oxides on labile organic carbon stabilisation](https://doi.org/10.1016/j.geoderma.2011.12.030)[J]. Geoderma, 2012, 173: 104-110.
 [^5]: Cai Y, Ma T, Wang Y, et al. [Assessing the accumulation efficiency of various microbial carbon components in soils of different minerals](https://doi.org/10.1016/j.geoderma.2021.115562)[J]. Geoderma, 2022, 407: 115562.
+[^6]: 王璐莹,秦雷,吕宪国,姜明,邹元春. [铁促进土壤有机碳累积作用研究进展](https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2018&filename=TRXB201805001&uniplatform=NZKPT&v=S6JMDESWy88roKn6cxwfV1jDuxaPt_WUctWqUfpeOvB47_1Lnx2A4hxIoPX5gcWI)[J].土壤学报,2018,55(05):1041-1050.
+[^7]: 刘永红,叶发兵,岳霞丽,董元彦. [铁氧化物的合成及其表征](https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFD2006&filename=HBHG200607003&uniplatform=NZKPT&v=lAapXeiCwvyIGjrWJHKZjrtB_0ef5XTFpkSGFn65obDsNFp7-P8iz6zbinJPP1H5)[J].化学与生物工程,2006(07):10-12.
+[^8]: 吴思源,练有为,郑红,蔡鹏,濮玉兵. [制备条件对合成针铁矿的影响](https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFD2012&filename=HJHX201210024&uniplatform=NZKPT&v=6MaQ-CmnMRBerybdZXrj-fwGF93WX3xs4k9-cDGherPIfJnJBK00SU6d2NWDliwb)[J].环境化学,2012,31(10):1625-1630.
+[^9]: Rakhsh F, Golchin A, Al Agha A B, et al. [Mineralization of organic carbon and formation of microbial biomass in soil: Effects of clay content and composition and the mechanisms involved]()[J]. Soil Biology and Biochemistry, 2020, 151: 108036.
 
 
 
