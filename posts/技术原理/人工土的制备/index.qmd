@@ -1,0 +1,8 @@
+---
+title: "人工土的制备"
+subtitle: "按照一定比例混合针铁矿、高岭土及石英砂得到人工土"
+title-block-banner: false
+author: "舒子豪"
+date: today
+categories: [人工土,针铁矿,高岭土,石英砂]
+---

@@ -4,8 +4,6 @@ title-block-banner: false
 author: "舒子豪"
 date: 2022-9-12
 categories: [理论基础,互花米草]
-about: 
-    template: marquee
 ---
 
 # 核磁共振技术的理论基础

@@ -1,14 +1,64 @@
 ---
 listing:
-  contents: posts/博客
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: true
-  filter-ui: true
-  feed: true
+  - id: R
+    contents: posts/R/**/*.qmd
+    sort: "date desc"
+    type: default
+    fields: [image, date, title, subtitle, categories, author, reading-time]
+    categories: cloud
+    sort-ui: false
+    filter-ui: false
+    feed: true
+    page-size: 3
+  - id: 生态学
+    contents: posts/生态学/**/*.qmd
+    sort: "date desc"
+    type: default
+    fields: [image, date, title, subtitle, categories, author, reading-time]
+    categories: cloud
+    sort-ui: false
+    filter-ui: false
+    feed: true
+    page-size: 3
+  - id: 技术原理
+    contents: posts/技术原理/**/*.qmd
+    sort: "date desc"
+    type: default
+    fields: [image, date, title, subtitle, categories, author, reading-time]
+    categories: cloud
+    sort-ui: false
+    filter-ui: false
+    feed: true
+    page-size: 3
 page-layout: full
 title-block-banner: false
+comments: false
+toc: true
 ---
 
+## R
 
+::: {#R}
+:::
+
+ <a href="../posts/R/index.html"> <button type="button" class="btn btn-primary float-end btn-sm">See all/Ver todos</button></a>
+
+<br>
+
+## 生态学
+
+::: {#生态学}
+:::
+
+ <a href="../posts/生态学/index.html"> <button type="button" class="btn btn-primary float-end btn-sm">See all/Ver todos</button></a>
+
+<br>
+
+## 技术原理
+
+::: {#技术原理}
+:::
+
+ <a href="../posts/技术原理/index.html"> <button type="button" class="btn btn-primary float-end btn-sm">See all/Ver todos</button></a>
+
+<br>

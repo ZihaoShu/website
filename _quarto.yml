@@ -4,13 +4,18 @@ project:
 website:
   title: "舒子豪"
   site-url: https://shuzihao.netlify.app
-  navbar:
-    background: primary
-    search: true
-    right:
-      - text: "主页"
-        file: index.qmd
-      - about.qmd
+  navbar: 
+    right: 
+      - text: 主页
+        href: about.qmd
+      - text: 博客
+        menu: 
+          - text: R
+            href: posts/R/index.qmd
+          - text: 生态学
+            href: posts/生态学/index.qmd
+          - text: 技术原理
+            href: posts/技术原理/index.qmd
       - icon: rss
         href: index.xml
     pinned: true
@@ -18,12 +23,13 @@ website:
   page-footer: "Copyright 2022, Zihao Shu"
 format:
   html:
-    theme: litera
+    theme: yeti
     css: styles.css
     toc: true
-about:
-  template: marquee
+    citations-hover: true
+    footnotes-hover: true
 
+editor: visual
 
 
 

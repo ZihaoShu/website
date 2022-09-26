@@ -3,9 +3,7 @@ title: "Rtools安装问题"
 title-block-banner: false
 author: "舒子豪"
 date: 2022-2-24
-categories: [R语言]
-about: 
-    template: marquee
+categories: [R]
 ---
 # 1、下载
 首先进入[Rtools下载链接](https://cran.rstudio.com/bin/windows/Rtools/)下载Rtools安装包，根据电脑配置下载rtools，一般下载**rtools40v2-x86_64.exe**，对应为64位电脑。
@@ -55,6 +53,7 @@ about:
 <center>![](8.png)</center>
 
 复制以上路径然后添加到路径中。
+
 # 4、检验
 
 在Rstudio中分别输入：

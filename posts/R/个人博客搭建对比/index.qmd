@@ -1,0 +1,8 @@
+---
+title: "个人博客搭建方法"
+author: "舒子豪"
+date: today
+categories: [R,worldpress,Netlify,quarto]
+---
+
+# 现有搭建博客的方式
