@@ -1,5 +1,5 @@
 ---
-title: "个人博客搭建方法"
+title: "博客搭建方法"
 author: "舒子豪"
 date: today
 categories: [R,worldpress,Netlify,quarto]
