@@ -12,5 +12,5 @@ page-layout: full
 title-block-banner: true
 ---
 
-:::{#生态学}
+:::{#生物信息学}
 :::
