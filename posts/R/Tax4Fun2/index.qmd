@@ -1,0 +1,281 @@
+---
+title: "Tax4Fun2使用方法"
+subtitle: "根据官方文档翻译整理"
+title-block-banner: false
+author: "舒子豪"
+date: today
+categories: [R,Tax4Fun2,功能注释]
+---
+
+**Tax4Fun2**
+
+Tax4Fun2只需一个依赖：
+
+- BLAST（可以通过`buildDependencies()`命令安装）
+
+为用到所有的函数，可能需要额外安装一些包
+
+- R包`seqinr`和`ape`（可以通过`buildDependencies()`命令安装）
+
+- 功能注释需要用到[Diamond](http://www.crystalimpact.com/diamond/Default.htm)（Mac用户需要自己编译）
+
+在v1.1.5版本中，Tax4Fun2使用vsearch进行序列聚类。
+
+# 安装Tax4Fun2，构建默认参考数据和安装所有依赖项
+
+**下载及安装Tax4Fun2**
+
+1. 点击[这里](https://github.com/ZihaoShu/Tax4Fun2/raw/main/Tax4Fun2_1.1.5.tar.gz)下载R包或者在终端中运行
+
+```{}
+wget https://github.com/ZihaoShu/Tax4Fun2/raw/main/Tax4Fun2_1.1.5.tar.gz
+```
+
+2. 安装Tax4Fun2
+
+``` r
+install.packages(pkgs = "Tax4Fun2_1.1.5.tar.gz", repos = NULL, source = TRUE)
+```
+
+3. 加载Tax4Fun2
+
+``` r
+library(Tax4Fun2)
+```
+
+**构建默认参考数据库**
+使用`buildReferenceData()`命令将下载并构建默认的Tax4Fun2参考数据库，也可以一同安装R包`ape`和`seqinr`。此外还会测试路径中是否存在blast。为了确保下载成功，该函数还将使用`me5sum`自动检查下载数据的一致性。
+
+选项：
+
+- `path_to_working_directory = "."` > Tax4Fun2的安装路径（默认安装在当前工作目录）
+
+- `use_force = FALSE` > 如果存在则覆盖文件夹（默认为FALSE）
+
+- `install_suggested_packages = TRUE` > 安装R包`ape`和`seqinr`（默认为TRUE）
+
+``` r
+buildReferenceData(path_to_working_directory = ".", use_force = FALSE, install_suggested_packages = TRUE)
+```
+
+**工作路径和参考数据路径不同！！！**
+
+例如：
+
+工作路径："C:/Users/your_name/Desktop/Tax4Fun2"
+
+参考数据路径："C:/Users/your_name/Desktop/Tax4Fun2/Tax4Fun2_ReferenceData_v2"
+
+由于在windows中unzip命令存在一些问题，有的数据被下载了但无法解压。若存在这些问题请点击[这里](https://cloudstor.aarnet.edu.au/plus/s/OoKjFHWmyKcc48V/download)来下载完整的参考数据。然后在终端中提取数据并检查数据的一致性：
+
+``` shell
+# 1) 下载数据
+wget -O RefData.zip https://cloudstor.aarnet.edu.au/plus/s/OoKjFHWmyKcc48V/download
+
+# 2）解压数据
+unzip RefData.zip
+```
+
+检查数据的一致性
+``` r
+testReferenceData(path_to_reference_data = "Tax4Fun2_ReferenceData_v2")
+```
+
+**安装依赖**
+
+该命令将下载当前最新版本的blast，并将二进制文件放在Tax4Fun2的参考文件夹中。此外还将测试R包`ape`和`seqinr`的存在。
+
+选项：
+
+- `path_to_working_directory = "."` > 在Tax4Fun2安装文件夹中（默认安装在当前工作目录）
+
+- `use_force = FALSE` > 如果存在则覆盖文件夹（默认为FALSE）
+
+- `install_suggested_packages = TRUE` > 安装R包`ape`和`seqinr`（默认为TRUE）
+
+``` r
+buildDependencies(path_to_reference_data = "./Tax4Fun2_ReferenceData_v2", install_suggested_packages = TRUE)
+```
+
+:::{.callout-note}
+目录的路径应该指向由`buildReferenceData()`生成的文件夹
+:::
+
+**下载测试数据**
+
+该命令会自动下载并构建Tax4Fun2的测试数据
+
+选项：
+
+- `path_to_working_directory = "."` > 在Tax4Fun2安装文件夹中（默认安装在当前工作目录）
+
+- `use_force = FALSE` > 如果存在则覆盖文件夹（默认为FALSE）
+
+``` r
+getExampleData(path_to_working_directory = ".")
+```
+
+或者点击[这里](https://cloudstor.aarnet.edu.au/plus/s/4htgFinDIpzOuKK/download)下载数据。
+
+# 生成自己的参考数据
+
+**提取SSU序列（16S rRNA and 18S rRNA）**
+
+选择单基因组（见第一个命令）或者选择包含多基因组的文件夹或MAGS（见第二个命令）
+
+选项：
+
+- `genome_file or genome_folder` > 指定一个包含多个基因组的文件或文件夹。多个基因组必须放在一个文件夹中(每个基因组一个文件)，并以相同的文件扩展名结尾。
+
+- `file_extension = "fasta"` > Fasta单基因组文件或多基因组文件的扩展（默认为`"fasta"`）
+
+- `path_to_refernce_data = ""` > 指定包含参考数据的文件夹
+
+``` r
+# 1) 从单基因组中提取SSU序列
+extractSSU(genome_file = "OneProkaryoticGenome.fasta", file_extension = "fasta", path_to_reference_data = "Tax4Fun2_ReferenceData_v2")
+
+# 2) 从多基因组中提取SSU序列
+extractSSU(genome_folder = "MoreProkaryoticGenomes", file_extension = "fasta", path_to_reference_data = "Tax4Fun2_ReferenceData_v2")
+```
+
+:::{.callout-note}
+基因组中必须至少有一个16S或18S rRNA基因序列。运行命令删除“空”基因组（文件大小为0的基因组）后检查输出。
+:::
+
+**分配原核基因组的功能**
+
+选项：
+
+- `genome_file or genome_folder` > 指定一个包含多个基因组的文件或文件夹。多个基因组必须放在一个文件夹中(每个基因组一个文件)，并以相同的文件扩展名结尾。
+
+- `file_extension = "fasta"` > Fasta单基因组文件或多基因组文件的扩展（默认为`"fasta"`）
+
+- `path_to_refernce_data = ""` > 指定包含参考数据的文件夹
+
+- `num_of_threads = 1` > Diamond的线程数
+
+- `fast = TRUE` > 使用默认方式运行Diamond，FALSE调用Diamond时使用 --sensetive（可能会增加灵敏度但速度会变慢）
+
+``` r
+# 1) 为单基因组分配功能
+assignFunction(genome_file = "OneProkaryoticGenome.fasta", file_extension = "fasta", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", num_of_threads = 1, fast = TRUE)
+
+# 2) 为多基因组分配功能
+assignFunction(genome_folder = "MoreProkaryoticGenomes/", file_extension = "fasta", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", num_of_threads = 1, fast = TRUE)
+```
+
+**生成参考数据**
+
+在提取SSU序列和功能分配后，每个基因组至少有两个文件：一个带有SSU序列，另一个带有功能配置文件。为了生成最终数据集，选择存放这些文件的文件夹，并提供正确的文件扩展名(删除各自的文件扩展名将产生相同的文件名)。
+
+选项：
+
+- `path_to_refernce_data = ""` > 指定包含参考数据的文件夹
+
+- `path_to_user_data = ""` > 指定包含基因组的文件夹的路径(在通过`extractSSU`和`assignFunction`命令运行之后)
+
+- `name_of_user_data = ""` > 为数据指定一个名称。将在文件夹中生成一个文件夹，其中包含具有此名称的数据
+
+- `SSU_file_extension = "_16SrRNA.ffn"`
+
+- `KEGG_file_extension = "_funPro.txt"`
+
+``` r
+# 1) 单基因组生成参考数据不需要uclust
+generateUserData(path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_user_data = ".", name_of_user_data = "User_Ref0", SSU_file_extension = "_16SrRNA.ffn", KEGG_file_extension = "_funPro.txt")
+
+# 2) 不使用uclust生成自定义参考数据
+generateUserData(path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_user_data = "MoreProkaryoticGenomes", name_of_user_data = "User_Ref1", SSU_file_extension = "_16SrRNA.ffn", KEGG_file_extension = "_funPro.txt")
+
+# 3) 使用uclust生成自定义参考数据
+generateUserDataByClustering(path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_user_data = "MoreProkaryoticGenomes", name_of_user_data = "User_Ref2", SSU_file_extension = "_16SrRNA.ffn", KEGG_file_extension = "_funPro.txt", use_force = T)
+```
+
+:::{.callout-note}
+推荐使用第二个命令，包含一个uclust聚类步骤，从而消除数据中的冗余
+:::
+
+# 功能预测
+
+:::{.callout-note}
+OTU表的格式与测试数据中的格式一致！！！
+:::
+
+**使用默认参考数据进行功能预测**
+
+选项：
+
+- `path_to_otus = ""` > 指定包含otu序列的fasta文件的路径
+
+- `path_to_otu_table = "` > 指定otu表的路径
+
+- `path_to_refernce_data = ""` > 指定参考数据所在文件夹的路径
+
+- `path_to_temp_folder = ""` > 指定临时文件夹的路径。结果将存储在这里
+
+- `database_mode = "Ref99NR"` > 以'Ref99NR'或'Ref100NR'作为数据库模式运行。这个数字是指uclust中使用的聚类阈值(分别为99%和100%)
+
+- `num_threads = 6` > Diamond线程数
+
+- `use_force = TRUE` > 如果存在则覆盖文件夹（默认为FALSE）
+
+- `normalize_by_copy_number = TRUE` > 根据参考数据库中每个序列的平均16S rRNA拷贝数进行归一化
+
+- `normalize_pathways = FALSE` > 将每个KO的rel.丰度关联到它所属的每个路径。通过将其设置为`TRUE`, rel.丰度将被均匀地分配到它所分配的所有路径
+
+``` r
+# 1) 运行参考blast
+runRefBlast(path_to_otus = "KELP_otus.fasta", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Kelp_Ref99NR", database_mode = "Ref99NR", use_force = T, num_threads = 6)
+
+# 2) 功能预测配置
+makeFunctionalPrediction(path_to_otu_table = "KELP_otu_table.txt", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Kelp_Ref99NR", database_mode = "Ref99NR", normalize_by_copy_number = TRUE, min_identity_to_reference = 0.97, normalize_pathways = FALSE)
+
+# 或者
+makeFunctionalPrediction(path_to_otu_table = "KELP_otu_table.txt", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Kelp_Ref99NR", database_mode = "Ref99NR", normalize_by_copy_number = TRUE, min_identity_to_reference = 0.97, normalize_pathways = TRUE)
+```
+
+**使用默认数据库和用户生成的数据库(非聚类)进行功能预测**
+
+选项：
+
+- `include_user_data = T` > 在预测中包含用户数据
+
+- `name_of_user_data = ""` > 给数据库命名
+
+- `path_to_user_data = ""` > 指定要从中构建数据库的数据的路径
+
+``` r
+# 1) 生成用户数据（指定用户数据路径[here: KELP_UserData]）；数据库将与您的数据一起在文件夹中生成
+generateUserData(path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_user_data = "KELP_UserData", name_of_user_data = "KELP1", SSU_file_extension = ".ffn", KEGG_file_extension = ".txt")
+
+# 2) 使用include_user_data = TRUE运行引用blast并指定用户数据的路径[here: KELP_UserData/KELP1]
+runRefBlast(path_to_otus = "KELP_otus.fasta", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Kelp_Ref99NR_withUser1", database_mode = "Ref99NR", use_force = T, num_threads = 6, include_user_data = T, path_to_user_data = "KELP_UserData", name_of_user_data = "KELP1")
+
+# 3) 用你的数据进行预测
+makeFunctionalPrediction(path_to_otu_table = "KELP_otu_table.txt", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Kelp_Ref99NR_withUser1", database_mode = "Ref99NR", normalize_by_copy_number = T, min_identity_to_reference = 0.97, normalize_pathways = F, include_user_data = T, path_to_user_data = "KELP_UserData", name_of_user_data = "KELP1")
+```
+
+**使用默认数据库和用户生成的数据库(使用vsearch进行聚类)进行功能预测**
+``` r
+# 1) 生成用户数据（指定用户数据路径[here: KELP_UserData]）；数据库将与您的数据一起在文件夹中生成
+generateUserDataByClustering(path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_user_data = "KELP_UserData", name_of_user_data = "KELP2", SSU_file_extension = ".ffn", KEGG_file_extension = ".txt", similarity_threshold = 0.99)
+
+# 2) 使用include_user_data = TRUE运行引用blast并指定用户数据的路径[here: KELP_UserData/KELP1]
+runRefBlast(path_to_otus = "KELP_otus.fasta", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Kelp_Ref99NR_withUser2", database_mode = "Ref99NR", use_force = T, num_threads = 6, include_user_data = T, path_to_user_data = "KELP_UserData", name_of_user_data = "KELP2")
+
+# 3) 用你的数据进行预测
+makeFunctionalPrediction(path_to_otu_table = "KELP_otu_table.txt", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Kelp_Ref99NR_withUser2", database_mode = "Ref99NR", normalize_by_copy_number = T, min_identity_to_reference = 0.97, normalize_pathways = F, include_user_data = T, path_to_user_data = "KELP_UserData", name_of_user_data = "KELP2")
+```
+
+# 计算（多）功能冗余指数（实验）
+计算 KEGG 函数的系统发育分布（高 FRI -> 高冗余，低 FRI -> 功能冗余较少，可能会随着群落变化而消失）
+
+``` r
+# 1) 运行参考blast
+runRefBlast(path_to_otus = "Water_otus.fna", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Water_Ref99NR", database_mode = "Ref99NR", use_force = T, num_threads = 6)
+
+# 2) 计算FRIs
+calculateFunctionalRedundancy(path_to_otu_table = "Water_otu_table.txt", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Water_Ref99NR", database_mode = "Ref99NR", min_identity_to_reference = 0.97)
+```
+
