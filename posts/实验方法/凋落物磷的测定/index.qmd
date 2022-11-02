@@ -5,7 +5,7 @@ title-block-banner: false
 author: "舒子豪"
 date: today
 categories: [磷,钼锑抗比色法,硫酸——过氧化氢消解]
-image: "NYT 2421-2013.jpg"
+image: "NYT 2421-2013.png"
 ---
 # 1 基本原理
 植物样品用硫酸——过氧化氢消化，使各种形态的磷转变成正磷酸盐，正磷酸盐与钼锑抗显色剂反应，生成磷钼蓝，蓝色溶液的吸光度与喊磷量成正比例关系。
