@@ -12,10 +12,10 @@ website:
         menu: 
           - text: R
             href: posts/R/index.qmd
-          - text: 生态学
-            href: posts/生态学/index.qmd
-          - text: 技术原理
-            href: posts/技术原理/index.qmd
+          - text: 生物信息学
+            href: posts/生物信息学/index.qmd
+          - text: 实验方法
+            href: posts/实验方法/index.qmd
       - icon: rss
         href: index.xml
     pinned: true
