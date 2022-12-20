@@ -1,0 +1,50 @@
+---
+title: "使用R获取空间数据并绘图"
+subtitle: "在使用ArcGis的情况下在R中获取空间数据并实现数据可视化"
+title-block-banner: false
+author: "舒子豪"
+date: today
+categories: [R,ArcGis,tidyverse,sf]
+image: " "
+---
+
+# 1 数据的获取
+转到示例数据的[网站](https://data-nces.opendata.arcgis.com/datasets/nces::public-school-locations-current-1/explore?location=31.610909%2C-96.594959%2C4.67)，点击左边“我想使用这个”，然后从“查看API资源”下的“GeoJSON”链接复制URL。
+
+
+# 2 数据读取
+可以使用sf包将该空间数据直接读取到R中。读取该URL后，可以从列（每个点所有空间坐标所在的列）中删除任何空间数据，然后为地图提供标准CRS以用于所有点。
+```R
+library(tidyverse) #核心工具
+library(sf)  #核心空间包。能够替代ArcGIS完成大多数空间数据处理
+sf::sf_use_s2(FALSE)
+
+url <- "https://services1.arcgis.com/Ua5sjt3LWTPigjyD/arcgis/rest/services/Public_School_Location_201819/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+
+data <- read_sf(url) |> 
+    drop_na(geometry) |>
+    st_as_sf(crs = st_crs(4326))
+```
+
+# 数据可视化
+此时已经准备好数据，目前有很多空间R包可以实现空间数据可视化（leafet,mapview,mapdeck,tmp,leafgl,rdeck）。该教程选用rdeck进行数据可视化。
+
+``` r
+# remotes::install_github("qfes/rdeck@*release")
+library(rdeck)
+
+rdeck(map_style = NULL,
+      theme = "light") |>
+  add_scatterplot_layer(data = school_sites,
+                        name = "Public Schools (SY21-22)",
+                        get_position = geometry)
+
+
+Error in `add_scatterplot_layer()`:     
+! Failed to create layer
+Caused by error in `rlang::dots_list()`:
+! object 'school_sites' not found
+Run `rlang::last_error()` to see where the error occurred.
+      
+```
+
