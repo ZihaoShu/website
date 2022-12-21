@@ -1,0 +1,19 @@
+project:
+  type: book
+
+book:
+  title: "ggplot2:数据分析与图形艺术"
+  author: "舒子豪"
+  date: today
+  chapters:
+    - index.qmd
+    - 开始.qmd
+    - 图层.qmd
+    - 标度.qmd
+    - 语法.qmd
+
+bibliography: references.bib
+
+
+
+

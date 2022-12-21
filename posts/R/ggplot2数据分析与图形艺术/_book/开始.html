@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ggplot2:数据分析与图形艺术 - 1 引言</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./图层.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">1 引言</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">ggplot2:数据分析与图形艺术</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">欢迎</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./开始.html" class="sidebar-item-text sidebar-link active">1 引言</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./图层.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./标度.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./语法.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#欢迎来到ggplot2" id="toc-欢迎来到ggplot2" class="nav-link active" data-scroll-target="#欢迎来到ggplot2">1.1 欢迎来到ggplot2</a></li>
+  <li><a href="#什么是图形语法" id="toc-什么是图形语法" class="nav-link" data-scroll-target="#什么是图形语法">1.2 什么是图形语法？</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">1 引言</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="欢迎来到ggplot2" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="欢迎来到ggplot2">1.1 欢迎来到ggplot2</h2>
+<p>ggplot2是一个用于绘制统计图形（或称为数据图形）的R包。与其他大多数的图形软件包不同，ggplot2由一套图形语法所支持，允许将独立的图形组件组合起来。这一点使得ggplot2功能非常强大。你可以根据实际问题来定制图形，而不是局限于定义好的统计图形。虽然必须学习语法听起来很困难，但实际上ggplot2的学习只需要掌握一些核心准则以及少许特例，尽管可能需要花费一些时间去忘掉其他图形工具中的一些固有概念。</p>
+<p>ggplot2可以绘制出很多美观的图形，同时能避免诸多繁琐的细节，例如添加图例等。实际上，ggplot2内置了一系列的预设图形，因此在大部分的情况下你可以快速的绘制出高质量的图形。如果有特殊的格式要求，也可以使用ggplot2的主题系统来进行调整。这样你可以专注于用创建展示数据的图形，而不是花费更多的时间来调整图形的外观。</p>
+<p>ggplot2采用了迭代（iteratively）的设计方式，你可以从绘制原始数据的底层开始，然后不断地添加图形注释和统计汇总结果。这种绘图方式与分析问题中的结构化思维是一致的，它能缩短你“所思”与“所见”的距离。ggplot2还可以帮助学生锻炼结构化地分析思维，进而达到专业的水准。</p>
+<p>学习图形语法不仅可以帮助你绘制出熟悉的图形，还可以帮助你绘制出更新、更好的图形。如果没有这一套语法体系，图形的绘制便失去了理论支持，这也就是为什么现有的很多图形软件包只是一系列特例的堆积。例如在base R中，如果你想设计一个新的图形，那么它是由点和线等原始绘图元素构成，因此很难利用现有的图形样式进行组合以生成新的图形部件。在ggplot2中，用于创建新图形的表达式是由高级的图形元素组成的，例如对原始数据以及某些统计变换的展现。这些图形元素可以很方便地与新的数据集以及其他图形进行结合。</p>
+<p>本书通过大量示例代码和图形对ggplot2进行了整体的介绍，同时还解释了ggplot2所基于的语法。与其他成熟的系统一样，即使你不了解ggplot2的底层模型，你也可以用它来完成许多工作。当然你了解的越多，使用ggplot2时会越高效。</p>
+<p>本书将会从零开始介绍ggplot2的基础语法，因此读者不必担心目前对该语法一无所知；你将会学习到如何利用ggplot2来重新绘制那些你已经很熟悉的图形，以及向你展示如何使用语法创建新的图形类型，并最终使你成为可以自己来构建新的图形组件来扩展这一套语法的专家。</p>
+</section>
+<section id="什么是图形语法" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="什么是图形语法">1.2 什么是图形语法？</h2>
+<p>Wikinson创建了一套用来描述统计图形基本特性的语法规则。该语法回答了“什么是统计图形？”这一问题。ggplot2以Wilkinson的语法为基础，将图层作为主要的考察对象，并对其进行调整以嵌入到R中。简而言之，这套语法告诉我们一张统计图形就是从数据到<strong>几何对象</strong>（geometric object，缩写为geom，包括点、线、条形等）的<strong>图形属性</strong>（aesthetic attributes，缩写为aes，包括颜色、形状、大小等）的一个映射。此外图形中还可能包含数据的<strong>统计变换</strong>（statistical transformation，缩写为stat），最后绘制在某个特定的<strong>坐标系</strong>（coordinate system，缩写为coord）中。<strong>分面</strong>（facet，指将绘图窗口划分为若干个子窗口）可以用来生成数据不同子集的图形。一张统计图形就是由上述这些独立的图形部件所组成的。</p>
+<p>随着本书内容的推进，语法格式将会被更加详细的解释。以下是对这些图形部件的首次描述，介绍了贯穿全书的一些术语，并概述了每个图形部件的基本作用。如果你现在还不能无法完全理解，你将有更多机会了解图形部件以及它们如何协同工作的。</p>
+<p>所有的图形都由<strong>数据（data）</strong>、你想要可视化的信息和一个<strong>映射（mapping）</strong>组成，映射是对数据变量如何映射到图形属性的描述。有五个映射部件：</p>
+<ul>
+<li><p><strong>图层（layer）</strong>是几何对象和统计变换的集合。<strong>几何对象（geom）</strong>表示你在图中实际看到的内容（包括点、线、条形等）；<strong>统计变换（stat）</strong>是对数据进行的某种汇总。例如将数据分组计数以创建直方图，或将一个二维的关系用线性模型进行解释。</p></li>
+<li><p><strong>标度（scale）</strong>是将数据中的取值映射到图形空间。例如用颜色、大小或形状来表示不同的取值。展现标度的常见做法是绘制图例和坐标轴（逆映射），使读者可以从图形中读取原始数据。</p></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">欢迎</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./图层.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
